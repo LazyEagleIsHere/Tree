@@ -72,12 +72,6 @@ def draw(text, font_size, y_position):
   text_rect = text_render.get_rect(center=(width // 2, y_position))
   screen.blit(text_render, text_rect)
 
-def change_platform_color():
-  return (random.randint(110, 255), random.randint(110, 255), random.randint(110, 255))
-
-def change_ball_color():
-  return (random.randint(50, 255), random.randint(50, 255), random.randint(50, 255))
-
 def start_screen():
   start = True
   while start:
@@ -191,6 +185,7 @@ def main():
 
   game_running = True
   while game_running:
+    screen.fill(black)
     for event in pygame.event.get():
       if event.type == pygame.QUIT:
         pygame.quit()
